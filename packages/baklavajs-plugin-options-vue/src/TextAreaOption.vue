@@ -3,6 +3,7 @@
         <textarea
             type="text"
             class="dark-input"
+	    rows="10"
             :value="value"
             v-on="listeners"
             :placeholder="name"
@@ -23,7 +24,7 @@ export default class TextAreaOption extends Vue {
     name!: string;
 
     get listeners(): any {
-        return { ...this.$listeners, input: (ev: any) => this.$emit("textarea", ev.target.value) };
+        return { ...this.$listeners, input: (ev: any) => this.$emit("input", ev.target.value) };
     }
 
 }
